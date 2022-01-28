@@ -18,4 +18,9 @@ def stations_by_distance(stations, p):
         lt.append(tup)
     lt=sorted_by_key(lt,1)
     return lt
-
+def stations_within_radius(stations, centre, r):
+    x=stations_by_distance(stations,centre)
+    i=0
+    while x[i][1]<=r: i+=1
+    a=[x[j][0] for j in range(i)]
+    return a
