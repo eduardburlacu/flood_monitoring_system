@@ -24,3 +24,23 @@ def stations_within_radius(stations, centre, r):
     while x[i][1]<=r: i+=1
     a=[x[j][0] for j in range(i)]
     return a
+def rivers_with_station(stations):
+    rivers = []
+    for s in stations:
+        if s.river not in rivers:
+            rivers.append(s.river)
+    return rivers
+def stations_by_river(stations):
+    rivers = rivers_with_station(stations)
+    rivers.sort()
+    #riverstations =
+    riverdict = {}
+    for r in rivers:
+        riverdict[r] = []
+        for s in stations:
+            if r == s.river:
+                riverdict[r].append(s.name)
+    return riverdict
+                
+
+    #riverdict = dict.fromkeys(rivers, x)
