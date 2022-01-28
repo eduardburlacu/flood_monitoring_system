@@ -25,12 +25,18 @@ def stations_within_radius(stations, centre, r):
     a=[x[j][0] for j in range(i)]
     return a
 def rivers_with_station(stations):
+    '''
+    Given a list of stations, this function returns a sorted list with all the rivers.
+    '''
     rivers = []
     for s in stations:
         if s.river not in rivers:
             rivers.append(s.river)
     return rivers
 def stations_by_river(stations):
+    '''
+    Given a list of stations, this function returns a dictionary that maps river names (key) to a list of station objects on a given river.
+    '''
     rivers = rivers_with_station(stations)
     rivers.sort()
     #riverstations =
@@ -44,3 +50,27 @@ def stations_by_river(stations):
                 
 
     #riverdict = dict.fromkeys(rivers, x)
+
+
+
+def rivers_by_station_number(stations, N):
+    #Create a dictionary river: [all stations on that river in a list]
+    dict=stations_by_river(stations)
+    # lot is a list of tuples of (river,number of stations) sorted by #of stations
+    lot=[]
+    for key,value in dict.items():
+        lot.append((key,len(value)))
+    #The list (river,count of stations) is now sorted by the number(descending order).
+    lot=sorted_by_key(lot,1,reverse=True)
+    #Now we output first N counts(or more in case of equality for last place)
+    answer=[]
+    for i in range(N):
+        answer.append(lot[i])
+        if i==N-1:
+            j=i+1
+            while lot[j][1]==lot[i][1]:
+                answer.append(lot[j])
+                j+=1
+    return answer
+
+
