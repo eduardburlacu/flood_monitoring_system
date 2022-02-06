@@ -2,10 +2,12 @@ from floodsystem.stationdata import build_station_list
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
 
+
 stations = build_station_list()
 rivers = rivers_with_station(stations)
 rivers.sort()
 print(len(rivers), "rivers. First 10 - ", rivers[:10])
+
 
 StaRiv = stations_by_river(stations)
 output1 = []
