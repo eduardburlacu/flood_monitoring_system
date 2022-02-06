@@ -7,6 +7,8 @@ geographical data.
 """
 from haversine import haversine
 from .utils import sorted_by_key  # noqa
+
+
 def stations_by_distance(stations, p):
     '''
     Given a list of stations and coordinates p(tuple of lat,long), returns a list of tuples of station,distance sorted by distance.
@@ -18,12 +20,16 @@ def stations_by_distance(stations, p):
         lt.append(tup)
     lt=sorted_by_key(lt,1)
     return lt
+
+
 def stations_within_radius(stations, centre, r):
     x=stations_by_distance(stations,centre)
     i=0
     while x[i][1]<=r: i+=1
     a=[x[j][0] for j in range(i)]
     return a
+
+
 def rivers_with_station(stations):
     '''
     Given a list of stations, this function returns a sorted list with all the rivers.
@@ -33,6 +39,8 @@ def rivers_with_station(stations):
         if s.river not in rivers:
             rivers.append(s.river)
     return rivers
+
+
 def stations_by_river(stations):
     '''
     Given a list of stations, this function returns a dictionary that maps river names (key) to a list of station objects on a given river.
@@ -47,10 +55,6 @@ def stations_by_river(stations):
             if r == s.river:
                 riverdict[r].append(s.name)
     return riverdict
-                
-
-    #riverdict = dict.fromkeys(rivers, x)
-
 
 
 def rivers_by_station_number(stations, N):

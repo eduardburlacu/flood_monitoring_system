@@ -40,10 +40,14 @@ class MonitoringStation:
         return d
     
     def typical_range_consistent(self):
+        '''
+        This function returns False if there is no data for typical range or if data is invalid and True otherwise.
+        '''
         if self.typical_range == None or self.typical_range[0] > self.typical_range[1]:
             return False
         else:
             return True
+
 
 def inconsistent_typical_range_stations(stations):
     '''
