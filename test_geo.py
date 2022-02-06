@@ -3,7 +3,6 @@ from floodsystem.geo import stations_by_distance, stations_within_radius, rivers
 from haversine import haversine
 
 def test_stations_by_distance():
-
     stations = build_station_list()
     ls = stations_by_distance(stations)
     for i in range(len(ls)-1):

@@ -4,7 +4,7 @@
 """Unit test for the station module"""
 
 from floodsystem.stationdata import build_station_list
-from floodsystem.station import MonitoringStation, inconsistent_typical_range_stations, typical_range_consistent
+from floodsystem.station import MonitoringStation, inconsistent_typical_range_stations
 
 
 def test_create_monitoring_station():
