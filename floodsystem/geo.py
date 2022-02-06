@@ -72,5 +72,3 @@ def rivers_by_station_number(stations, N):
                 answer.append(lot[j])
                 j+=1
     return answer
-
-
