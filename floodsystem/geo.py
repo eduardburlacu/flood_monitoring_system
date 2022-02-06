@@ -54,6 +54,9 @@ def stations_by_river(stations):
 
 
 def rivers_by_station_number(stations, N):
+    '''
+    Given a list of stations, this function returns a list of (river name, number of stations) tuples, sorted by the number of stations.
+    '''
     #Create a dictionary river: [all stations on that river in a list]
     dict=stations_by_river(stations)
     # lot is a list of tuples of (river,number of stations) sorted by #of stations

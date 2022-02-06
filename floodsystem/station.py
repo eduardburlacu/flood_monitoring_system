@@ -46,6 +46,9 @@ class MonitoringStation:
             return True
 
 def inconsistent_typical_range_stations(stations):
+    '''
+    Given a list of stations, this function returns a sorted list of stations with inconsistent data.
+    '''
     ls = []
     for s in stations:
         if s.typical_range_consistent() == False:
