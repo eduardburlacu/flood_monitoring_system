@@ -39,7 +39,7 @@ def rivers_with_station(stations):
     for s in stations:
         if s.river not in rivers:
             rivers.append(s.river)
-    return rivers
+    return sorted(rivers)
 
 
 def stations_by_river(stations):
@@ -79,4 +79,4 @@ def rivers_by_station_number(stations, N):
             while lot[j][1]==lot[i][1]:
                 answer.append(lot[j])
                 j+=1
-    return answer
+    return sorted(answer, reverse=True)
