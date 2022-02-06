@@ -6,7 +6,7 @@ def test_stations_by_distance():
     stations = build_station_list()
     ls = stations_by_distance(stations, (52.2053, 0.1218))
     for i in range(len(ls)-1):
-        assert ls[i][1] < ls[i+1][1] # checks station's distance smaller than next one's.
+        assert ls[i][1] <= ls[i+1][1] # checks station's distance smaller than next one's.
 
 def test_stations_within_radius():
     stations = build_station_list()
@@ -26,7 +26,7 @@ def test_rivers_with_station():
 
 def test_rivers_by_station_number():
     stations = build_station_list()
-    ls = rivers_by_station_number(stations)
+    ls = rivers_by_station_number(stations,30)
     for i in ls:
         assert i[1] > 0 # checks station no. is greater than 0
     ls2 = ls.copy()
