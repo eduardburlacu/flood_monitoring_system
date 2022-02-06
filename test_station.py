@@ -32,5 +32,5 @@ def test_inconsistent_typical_range_stations():
     stations = build_station_list()
     ls = inconsistent_typical_range_stations(stations)
     for i in stations:
-        if i.name in ls:
+        if i.name in ls and stations.count(i.name) == 1:
             assert i.typical_range_consistent() == False # Checks that all the stations in the list have inconsistent data
