@@ -4,7 +4,7 @@ from haversine import haversine
 
 def test_stations_by_distance():
     stations = build_station_list()
-    ls = stations_by_distance(stations)
+    ls = stations_by_distance(stations, (52.2053, 0.1218))
     for i in range(len(ls)-1):
         assert ls[i][1] < ls[i+1][1] # checks station's distance smaller than next one's.
 

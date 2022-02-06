@@ -5,8 +5,14 @@
 geographical data.
 
 """
+import math
 from haversine import haversine
 from .utils import sorted_by_key  # noqa
+
+def haversine2(p,q):
+    y = pow(math.sin(0.5*(p[0]-q[0])), 2) + pow(math.sin(0.5*(p[0]-q[0])), 2)
+    x = math.sqrt(y)
+    d = 12756.2 * math.arcsin(x)
 
 
 def stations_by_distance(stations, p):
