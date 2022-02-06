@@ -56,6 +56,5 @@ def inconsistent_typical_range_stations(stations):
     ls = []
     for s in stations:
         if s.typical_range_consistent() == False:
-            print(s.typical_range_consistent())
             ls.append(s.name)
     return sorted(ls)
