@@ -79,4 +79,4 @@ def rivers_by_station_number(stations, N):
             while lot[j][1]==lot[i][1]:
                 answer.append(lot[j])
                 j+=1
-    return sorted(answer, reverse=True)
+    return answer

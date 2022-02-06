@@ -30,5 +30,5 @@ def test_rivers_by_station_number():
     for i in ls:
         assert i[1] > 0 # checks station no. is greater than 0
     ls2 = ls.copy()
-    ls2.sort(key = lambda x: x[1])
+    ls2.sort(key = lambda x: x[1], reverse=True)
     assert ls2 == ls # checks if list is sorted by station number
