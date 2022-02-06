@@ -21,7 +21,7 @@ def test_rivers_with_station():
     total = []
     for i in ls:
         assert i not in total # checks for duplicates
-        total.append[i]
+        total.append(i)
     assert sorted(total) == ls # checks if sorted
 
 def test_rivers_by_station_number():
