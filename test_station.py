@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 """Unit test for the station module"""
 
-from floodsystem.stationdata import build_station_list
+from floodsystem.stationdata import build_station_list, update_water_levels
 from floodsystem.station import MonitoringStation, inconsistent_typical_range_stations
 
 
@@ -34,3 +34,11 @@ def test_inconsistent_typical_range_stations():
     for i in stations:
         if i.name in ls and stations.count(i.name) == 1:
             assert i.typical_range_consistent() == False # Checks that all the stations in the list have inconsistent data
+
+def test_relative_water_level():
+    stations=build_station_list()
+    update_water_levels(stations)
+    inc=inconsistent_typical_range_stations(stations)
+    for station in stations:
+        if station in inc:
+            assert station.relative_water_level()==None
