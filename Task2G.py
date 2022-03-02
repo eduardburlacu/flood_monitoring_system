@@ -21,39 +21,32 @@ while i < len(stations):
     relative = station.relative_water_level()
     rise = station.latest_level - station.typical_range[0]
     #print(station.name, gradient, relative, rise)
-    if (relative > 5) and (rise > 3) and (gradient > 0.2):
+    if (relative > 4) and (rise > 3) and (gradient > 0.2):
         print("")
         print("Severe flood risk at", station.name)
         print("------------------------------------------------------------")
         print("Average rate of rising:", round(gradient,3), "meters per day     (> 0.2mpd)")
         print("Height above typical upper range:", round(rise,3), "meters   (> 3m)")
-        print("Relative Water Level:", round(relative, 2), "                      (> 5)")
-    elif (relative > 4) and (rise > 2) and (gradient > 0.1):
+        print("Relative Water Level:", round(relative, 2), "                      (> 4)")
+    elif (relative > 3) and (rise > 2) and (gradient > 0.1):
         print("")
         print("High flood risk at", station.name)
         print("------------------------------------------------------------")
         print("Average rate of rising:", round(gradient,3), "meters per day     (> 0.1mpd)")
         print("Height above typical upper range:", round(rise,3), "meters   (> 2m)")
-        print("Relative Water Level:", round(relative, 2), "                      (> 4)")
-    elif (relative > 3) and (rise > 1.5) and (gradient > 0):
+        print("Relative Water Level:", round(relative, 2), "                      (> 3)")
+    elif (relative > 1.8) and (rise > 1.5) and (gradient > 0.1):
         print("")
         print("Moderate flood risk at", station.name)
         print("------------------------------------------------------------")
-        print("Average rate of rising:", round(gradient,3), "meters per day     (> 0mpd)")
+        print("Average rate of rising:", round(gradient,3), "meters per day     (> 0.1mpd)")
         print("Height above typical upper range:", round(rise,3), "meters   (> 1.5m)")
-        print("Relative Water Level:", round(relative, 2), "                      (> 3)")
-    elif (relative > 2) and (rise > 1) and (gradient > 0):
+        print("Relative Water Level:", round(relative, 2), "                      (> 2)")
+    elif (relative > 1.2) and (rise > 0.8) and (gradient > 0):
         print("")
         print("Low flood risk at", station.name)
         print("------------------------------------------------------------")
-        print("Average rate of rising:", round(gradient,3), "meters per day     (> -0.1mpd)")
-        print("Height above typical upper range:", round(rise,3), "meters   (> 1m)")
-        print("Relative Water Level:", round(relative, 2), "                      (> 2)")
-    elif (relative > 2) and (rise > 1) and (gradient > -0.1):
-        print("")
-        print("Low flood risk at", station.name)
-        print("------------------------------------------------------------")
-        print("Average rate of rising:", round(gradient,3), "meters per day    (> -0.1mpd)")
-        print("Height above typical upper range:", round(rise,3), "meters   (> 1m)")
-        print("Relative Water Level:", round(relative, 2), "                      (> 2)")
+        print("Average rate of rising:", round(gradient,3), "meters per day     (> 0mpd)")
+        print("Height above typical upper range:", round(rise,3), "meters   (> 0.8m)")
+        print("Relative Water Level:", round(relative, 2), "                      (> 1.2)")
     i+=1
