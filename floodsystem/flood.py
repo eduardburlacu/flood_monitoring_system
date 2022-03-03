@@ -1,5 +1,8 @@
 from .utils import sorted_by_key
 def stations_level_over_threshold(stations, tol):
+    '''
+     Given a list of stations and a tolerance, this function returns a list of tuples, where each tuple holds a station (object) at which the latest relative water level is over tol and the relative water level at the station.
+    '''
     output=[]
     for s in stations:
         if s.relative_water_level() is not None:
@@ -9,6 +12,9 @@ def stations_level_over_threshold(stations, tol):
     return output1
 
 def stations_highest_rel_level(stations, N):
+    '''
+    Given a list of stations and an integer, this function returns a list of the N stations (objects) at which the water level, relative to the typical range, is highest.
+    '''
     output=[]
     for s in stations:
         if s.relative_water_level() is not None:
